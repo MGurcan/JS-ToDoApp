@@ -1,16 +1,24 @@
-window.addEventListener('load', () => {
+words_geridonus = [
+    "Her şeye rağmen pişman olmamak en güzeli…",
+    "Gökyüzü çatlasa bile,\nBir geri dönüş yolu olmalı.\nSevmek ve yalnızca sevmek için.",
+    "Yapılan seçimler beraberinde suçluluk getiriyor. Bundan kurtuluş yok.",
+    "Belirli bir noktadan sonra geri dönüş yoktur. İşte bu noktaya ulaşmak gerekir.",
+    "Geri dönüş. Sürgünde hayal etmeye değecek çok az şey vardı."
+]
+let deleted_elements = [];
+
+window.addEventListener('load', () => { //The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images.
     const form = document.querySelector("#new-task-form");
     const input = document.querySelector("#new-task-input")
     const list_el = document.querySelector("#tasks")
 
-    console.log(input)
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    form.addEventListener("submit", (e) => {    
+        e.preventDefault();   //to stop button's default feature ( directs to page again )
         const task = input.value;
 
         if(!task){
-            alert("add item");
+            alert("Please add item");
             return;
         }
         const task_el = document.createElement("div");
@@ -40,10 +48,28 @@ window.addEventListener('load', () => {
         task_el.appendChild(task_button_features_el);
 
         list_el.appendChild(task_el);
-
+        var readd_button = document.getElementById('readdbutton');
+        
 
         task_delete_el.addEventListener('click', () =>{
-            task_el.remove();
+            var confirm_message = words_geridonus[Math.floor(Math.random() * 5)] + "\nYOU ARE GOING TO DELETE THIS \"TO DO\". YOU SURE?"
+            if(confirm(confirm_message)){
+                deleted_elements.push(task_el);
+                task_el.remove();
+            }
         })
+            
+
+
+
+
+       
+        readd_button.addEventListener('click', () =>{
+            console.log("calısti")
+            var temp = deleted_elements.pop();
+            if(temp != null){
+                list_el.appendChild(temp);     
+            }
+        }); 
     })
 })

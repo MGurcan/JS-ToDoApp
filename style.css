@@ -1,95 +1,165 @@
-body{
-    background: purple;
+body {
+    opacity: 0.8;
+    background: url(images/rose_background.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
-    flex-direction:column ;
+    flex-direction: column;
     min-height: 100vh;
     color: whitesmoke;
 }
-header{
+
+.header {
+    background: #03001e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    text-align: center;
     padding: 10px 5px;
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
+    border-radius: 25px;
+
 }
-header h1{
+
+.header h1 {
+
     font-family: sans-serif;
-    font-weight: 500;
-    color: grey;
+    font-weight: 900;
+    color: rgb(5, 0, 0);
     margin-bottom: 10px;
+
 }
 
-#new-task-form{
+#new-task-form {
+    background: #bc4e9c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f80759, #bc4e9c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
+    margin: 20px;
+    border-radius: 20px;
+}
+.undo button{
+    width: 80%;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+    height: 50px;
+    background: #bc4e9c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f80759, #bc4e9c);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.undo button:hover{
+    opacity: 0.5;
 }
 
-input, button {
+input,
+button {
     appearance: none;
     border: none;
     outline: none;
     background: none;
 }
 
-#new-task-input{
+#new-task-input {
     flex: 1 1 0%;
-    background-color: rgb(57, 21, 49);
+    background-color: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
     padding: 10px;
     border-radius: 10px;
     margin-right: 10px;
     font-size: 16px;
 }
 
-#new-task-submit{
+#new-task-submit {
     color: pink;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.5s;
 }
-#new-task-submit::hover{
+
+#new-task-submit::hover {
     opacity: 0.7;
 }
-#new-task-submit::active{
+
+#new-task-submit::active {
     opacity: 0.5;
 }
 
 
-.added-items{
-    background: linear-gradient(hsl(293, 100%, 63%),hsl(264, 100%, 61%) );
+.added-items {
+    opacity: 0.8;
+    background: #03001e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     flex: 1 1 0%;
-    padding: 10px 5px;
+
     max-width: 800px;
     width: 100%;
-    margin: 0 auto;
+    margin: 20px;
+    border-radius: 25px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
 }
 
-.tasks{
+.tasks {
     padding: 10px;
 }
-.tasks h2{
-    font-size:16px ;
-    font-weight: 600;
+
+.added-items h2 {
+    font-size: 20px;
+    font-weight: 900;
     font-family: sans-serif;
     margin-bottom: 10px;
+    color: black;
+    display: flex;
+    align-self: center;
 }
 
-.task{
+.task {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(181, 22, 22);
+    background: #bc4e9c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f80759, #bc4e9c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
-.task .content .text{
+
+.task .content .text {
     color: whitesmoke;
     font-size: 14px;
 }
 
-.task .buttonfeatures{
+.task .buttonfeatures {
     display: flex;
 }
-.task .buttonfeatures button{
+
+.task .buttonfeatures button {
     cursor: pointer;
-    font-size:14px ;
+    font-size: 14px;
     font-weight: 800;
 }
